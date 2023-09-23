@@ -4,7 +4,10 @@ const frutas = [
     { nombre: 'naranja', descripcion: 'Es una fruta naranja llena de vitamina C.', imagen: '../recursos/naranja.jpg' },
     { nombre: 'uva', descripcion: 'Son pequeñas frutas moradas y se usan para hacer vino.', imagen: '../recursos/uva.jpg' },
     { nombre: 'sandía', descripcion: 'Es una gran fruta verde y jugosa, perfecta para el verano.', imagen: '../recursos/sandia.avif' },
-  ];
+    { nombre: 'mandarina', descripcion: 'Tiene forma esférica, contiene una pulpa dulce y jugosa que se divide en 10 ó 12 gajos.', imagen: '../recursos/mandarina.jpg' },
+    { nombre: 'peras', descripcion: 'Es una fruta en forma de bombilla; su cáscara es lisa, la cual puede ser de color verde, amarillo, café o rojizo. La pulpa es blanca y jugosa.', imagen: '../recursos/peras.jpg' },
+
+];
   
   let puntaje = 0;
   let frutaActual = null;
@@ -26,11 +29,15 @@ const frutas = [
   
   function adivinarFruta() {
     const respuestaUsuario = respuestaInput.value.toLowerCase();
-    if (respuestaUsuario === frutaActual.nombre) {
+    if (respuestaUsuario === frutaActual.nombre ) {
+        puntaje >= 0
       puntaje++;
       puntajes.textContent = puntaje;
       mostrarNuevaFruta();
     } else {
+        puntaje--;
+        puntajes.textContent = puntaje;
+        mostrarNuevaFruta();
       alert('Incorrecto. ¡Inténtalo de nuevo!');
     }
   }
